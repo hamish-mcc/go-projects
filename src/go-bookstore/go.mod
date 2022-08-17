@@ -1,4 +1,4 @@
-module github.com/hamish-mcc/eleven-go-projects/src/go-bookstore
+module github.com/hamish-mcc/go-bookstore
 
 go 1.19
 
