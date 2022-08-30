@@ -124,8 +124,8 @@ func UpdateUser(req events.APIGatewayProxyRequest, tableName string, dynaClient 
 
 	currentUser, _ := FetchUser(u.Email, tableName, dynaClient)
 
-	if currentUser != nil && len(currentUser.Email) != 0 {
-		return nil, errors.New(ErrorUserAlreadyExists)
+	if currentUser != nil && len(currentUser.Email) == 0 {
+		return nil, errors.New(ErrorUserDoesNotExist)
 	}
 
 	av, err := dynamodbattribute.MarshalMap(u)
